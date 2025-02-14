@@ -4,21 +4,14 @@ import { redirect } from "next/navigation";
 
 const Home = async () => {
   const { userId } = await auth();
-
   if (!userId) {
-    redirect('/login');
+    redirect("/login");
   }
-
   return (
-    <div className="flex items-center justify-center w-screen dark">
-      <h1 className="text-red-500 p-5">
-        Teste
-      </h1>
-
+    <div className="flex h-full items-center justify-center">
       <UserButton showName />
-
     </div>
   );
-}
+};
 
 export default Home;
