@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FinanceAI
 
-## Getting Started
+Este repositório contém o projeto **FinanceAI**, desenvolvido durante a Full Stack Week. O objetivo do projeto é fornecer uma plataforma financeira que utiliza Inteligência Artificial para auxiliar os usuários na gestão de suas finanças pessoais.
 
-First, run the development server:
+## Tecnologias Utilizadas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **React**: Biblioteca JavaScript para construção de interfaces de usuário.
+- **Next.js 13**: Framework React que oferece renderização do lado do servidor e geração de sites estáticos.
+- **Next Auth**: Biblioteca para autenticação de usuários com suporte a OAuth.
+- **PostgreSQL**: Sistema de gerenciamento de banco de dados relacional.
+- **Prisma**: ORM para Node.js e TypeScript que facilita o acesso ao banco de dados.
+- **shadcn/ui**: Biblioteca de componentes de interface do usuário reutilizáveis e estilizados.
+- **Tailwind CSS**: Framework CSS utilitário para estilização rápida e consistente.
+- **Stripe API**: Plataforma de pagamentos online para processar transações de forma segura.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Funcionalidades
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Dashboard Financeira**: Visualize e gerencie suas finanças em um painel intuitivo.
+- **Análise de Despesas**: Obtenha insights sobre seus gastos e identifique áreas de economia.
+- **Previsão Financeira com IA**: Receba previsões personalizadas baseadas em seus hábitos financeiros.
+- **Autenticação Segura**: Proteja suas informações com sistemas de login e registro robustos.
+- **Integração com Pagamentos**: Gerencie transações e pagamentos através da integração com a API do Stripe.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Instalação e Uso
 
-## Learn More
+1. **Clone o repositório**:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   git clone https://github.com/sampaiogabriel/finance.ai.git
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Instale as dependências**:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   cd fullstackweek-financeai
+   npm install
+   ```
 
-## Deploy on Vercel
+3. **Configure as variáveis de ambiente**:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   Crie um arquivo `.env` na raiz do projeto e defina as seguintes variáveis:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```env
+   DATABASE_URL=suabase_de_dados_url
+   NEXTAUTH_URL=sua_url_de_autenticacao
+   STRIPE_API_KEY=sua_chave_api_stripe
+   ```
+
+4. **Execute as migrações do banco de dados**:
+
+   ```bash
+   npx prisma migrate dev
+   ```
+
+5. **Inicie o servidor de desenvolvimento**:
+
+   ```bash
+   npm run dev
+   ```
+
+   O aplicativo estará disponível em `http://localhost:3000`.
+
+## Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests. Antes de contribuir, por favor, leia o arquivo `CONTRIBUTING.md` para entender as diretrizes do projeto.
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT. Consulte o arquivo `LICENSE` para mais informações.
