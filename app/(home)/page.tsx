@@ -21,10 +21,14 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
     redirect("/login");
   }
   const monthIsInvalid = !month || !isMatch(month, "MM");
+
   if (monthIsInvalid) {
-    redirect(`?month=${new Date().getMonth() + 1}`);
+    const defaultMonth = String(new Date().getMonth() + 1).padStart(2, "0");
+    redirect(`?month=${defaultMonth}`);
   }
+
   const dashboard = await getDashboard(month);
+
   return (
     <>
       <Navbar />
