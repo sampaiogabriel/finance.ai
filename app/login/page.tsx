@@ -7,11 +7,9 @@ import { redirect } from "next/navigation";
 
 const LoginPage = async () => {
   const { userId } = await auth();
-
   if (userId) {
     redirect("/");
   }
-
   return (
     <div className="grid h-full grid-cols-2">
       {/* ESQUERDA */}

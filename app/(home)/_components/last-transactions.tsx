@@ -21,14 +21,12 @@ const LastTransactions = ({ lastTransactions }: LastTransactionsProps) => {
     }
     return "text-white";
   };
-
   const getAmountPrefix = (transaction: Transaction) => {
     if (transaction.type === TransactionType.DEPOSIT) {
       return "+";
     }
     return "-";
   };
-
   return (
     <ScrollArea className="rounded-md border">
       <CardHeader className="flex-row items-center justify-between">

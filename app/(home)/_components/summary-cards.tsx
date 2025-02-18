@@ -6,7 +6,8 @@ import {
 } from "lucide-react";
 import SummaryCard from "./summary-card";
 
-interface Props {
+interface SummaryCards {
+  month: string;
   balance: number;
   depositsTotal: number;
   investmentsTotal: number;
@@ -18,9 +19,11 @@ const SummaryCards = async ({
   depositsTotal,
   expensesTotal,
   investmentsTotal,
-}: Props) => {
+}: SummaryCards) => {
   return (
     <div className="space-y-6">
+      {/* PRIMEIRO CARD */}
+
       <SummaryCard
         icon={<WalletIcon size={16} />}
         title="Saldo"
@@ -28,23 +31,22 @@ const SummaryCards = async ({
         size="large"
       />
 
+      {/* OUTROS CARDS */}
       <div className="grid grid-cols-3 gap-6">
         <SummaryCard
           icon={<PiggyBankIcon size={16} />}
+          title="Investido"
+          amount={investmentsTotal}
+        />
+        <SummaryCard
+          icon={<TrendingUpIcon size={16} className="text-primary" />}
           title="Receita"
           amount={depositsTotal}
         />
-
-        <SummaryCard
-          icon={<TrendingUpIcon size={16} className="text-primary" />}
-          title="Despesas"
-          amount={expensesTotal}
-        />
-
         <SummaryCard
           icon={<TrendingDownIcon size={16} className="text-red-500" />}
-          title="Investido"
-          amount={investmentsTotal}
+          title="Despesas"
+          amount={expensesTotal}
         />
       </div>
     </div>
