@@ -26,12 +26,15 @@ const Home = async ({ searchParams: { month } }: Props) => {
   return (
     <>
       <Navbar />
-      <div className="space-y-6 p-6">
+      <div className="grid space-y-6 p-6">
         <div className="flex justify-between">
           <h1 className="text-2xl font-bold">Dashboard</h1>
           <TimeSelect />
         </div>
-        <SummaryCards month={month} />
+
+        <div className="grid-cols-[2fr, 1fr]">
+          <SummaryCards month={month} />
+        </div>
       </div>
     </>
   );
